@@ -29,12 +29,19 @@ def addEvento():
 def verEventos():
     date = str(cal.get())
     if date in eventos:
+        lb1=Label(root,text=0)
+        lb2=Label(root,text=0)
         if  eventos[date] == "":
-            Label(root, text="Agenda vazia para hoje", font=("Titillium Web", 10, "bold")) \
+            lb2.place_forget()
+            lb1.place_forget()
+            lb1=Label(root, text="Agenda vazia para hoje", font=("Titillium Web", 10, "bold")) \
             .place(x=122, y=190)
         else:
-            Label(root, text=eventos[date], font=("Titillium Web", 10, "bold")) \
+            lb2.place_forget()
+            lb1.place_forget()
+            lb2=Label(root, text= eventos[date], font=("Titillium Web", 10, "bold")) \
                 .place(x=122, y=190)
+
     else:
         btverEventos = Button(command=0)
 
